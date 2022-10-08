@@ -220,28 +220,7 @@ function FastImageBase({
 const FastImageMemo = memo(FastImageBase)
 
 const FastImageComponent: React.ComponentType<FastImageProps> = forwardRef(
-    (props: FastImageProps, ref: React.Ref<any>) => {
-        if (
-            typeof props?.source === "object" &&
-            typeof props?.source .uri === "string" &&
-            props?.source .uri.startsWith("ph://")
-        ) {
-            const { uri, ...otherSource } = props?.source;
-            return (
-                <FastImageMemo
-                    forwardedRef={ref}
-                    source={{
-                        uri: uri?.replace("ph://", "photos://asset/"),
-                        ...otherSource
-                    }}
-                    {...props}
-                />
-            );
-        } else {
-            return <FastImageMemo forwardedRef={ref} {...props} />;
-        }
-
-    }
+    (props: FastImageProps, ref: React.Ref<any>) => ( <FastImageMemo forwardedRef={ref} {...props} /> )
 )
 
 FastImageComponent.displayName = 'FastImage'

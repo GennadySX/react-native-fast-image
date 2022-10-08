@@ -20,14 +20,14 @@ Performant React Native image component.
 <p align="center" >
   <kbd>
     <img
-      src="https://github.com/DylanVann/react-native-fast-image/blob/main/docs/assets/scroll.gif?raw=true"
+      src="https://github.com/GennadySX/react-native-fast-image/blob/main/docs/assets/scroll.gif?raw=true"
       title="Scroll Demo"
       float="left"
     >
   </kbd>
   <kbd>
     <img
-      src="https://github.com/DylanVann/react-native-fast-image/blob/main/docs/assets/priority.gif?raw=true"
+      src="https://github.com/GennadySX/react-native-fast-image/blob/main/docs/assets/priority.gif?raw=true"
       title="Priority Demo"
       float="left"
     >
@@ -43,6 +43,7 @@ headers for images you'll generally get the sort of built in
 caching behavior you'd have in a browser.
 Even so many people have noticed:
 
+-   IOS camera roll images are not cached by default.
 -   Flickering.
 -   Cache misses.
 -   Low performance loading from cache.
@@ -68,12 +69,12 @@ and
 **Note: You must be using React Native 0.60.0 or higher to use the most recent version of `react-native-fast-image`.**
 
 ```bash
-yarn add react-native-fast-image
+yarn add @genandysx/react-native-fast-image
 cd ios && pod install
 ```
 
 ```jsx
-import FastImage from 'react-native-fast-image'
+import FastImage from '@genandysx/react-native-fast-image'
 
 const YourImage = () => (
     <FastImage
@@ -282,3 +283,7 @@ Thanks to [@mobinni](https://github.com/mobinni) for helping with the conceptual
 [github-watch]: https://github.com/dylanvann/react-native-fast-image/watchers
 [github-star-badge]: https://img.shields.io/github/stars/dylanvann/react-native-fast-image.svg?style=social
 [github-star]: https://github.com/dylanvann/react-native-fast-image/stargazers
+
+#
+Modified with ❤️ by [Gennady Sabirovsky](https://gennadysx.com)
+#

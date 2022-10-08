@@ -197,6 +197,10 @@ function FastImageBase({
     const resolvedSource = Image.resolveAssetSource(source as any)
     const resolvedDefaultSource = resolveDefaultSource(defaultSource)
 
+    if (resolvedSource && resolvedSource.uri?.includes('ph://')) {
+        resolvedSource.uri = resolvedSource.uri.replace('ph://', 'photos://asset/')
+    }
+
     return (
         <View style={[styles.imageContainer, style]} ref={forwardedRef}>
             <FastImageView
@@ -220,7 +224,7 @@ function FastImageBase({
 const FastImageMemo = memo(FastImageBase)
 
 const FastImageComponent: React.ComponentType<FastImageProps> = forwardRef(
-    (props: FastImageProps, ref: React.Ref<any>) => ( <FastImageMemo forwardedRef={ref} {...props} /> )
+    (props: FastImageProps, ref: React.Ref<any>) => ( <FastImageMemo forwardedRef={ref} {...props} /> ),
 )
 
 FastImageComponent.displayName = 'FastImage'
